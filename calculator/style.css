@@ -1,0 +1,133 @@
+/* ---------- Basic reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Page background (centres the calculator) ---------- */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E6E9FB;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  padding: 20px;
+}
+
+/* ---------- Calculator box ---------- */
+.calc {
+  width: 100%;
+  max-width: 340px;
+  background: #1B1F3B;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 14px 40px rgba(27, 31, 59, 0.35);
+}
+
+/* ---------- Screen (top part that shows numbers) ---------- */
+.screen {
+  background: #12152B;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  text-align: right;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* small grey text, e.g. "5 +" */
+.history {
+  color: #8A90B8;
+  font-size: 0.95rem;
+  min-height: 1.4em;
+  word-break: break-all;
+}
+
+/* big white number */
+.display {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+  font-weight: 600;
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+/* ---------- Keypad (CSS grid, 4 columns) ---------- */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ---------- All buttons ---------- */
+button {
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 16px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #2B3060;
+  color: #FFFFFF;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: #3A4080;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button:focus-visible {
+  outline: 3px solid #F2B632;
+  outline-offset: 2px;
+}
+
+/* ---------- Special buttons ---------- */
+
+/* operators: + - × ÷ */
+.op {
+  background: #3D4FD6;
+}
+
+.op:hover {
+  background: #5666E8;
+}
+
+/* extra functions: ⌫ % ± */
+.fn {
+  background: #454B7D;
+}
+
+/* AC button */
+.clear {
+  background: #C2547A;
+}
+
+.clear:hover {
+  background: #D76A91;
+}
+
+/* = button (takes 2 rows) */
+.equals {
+  background: #F2B632;
+  color: #1B1F3B;
+  grid-row: span 2;
+}
+
+.equals:hover {
+  background: #FFC857;
+}
+
+/* wide zero button (not used right now) */
+.zero {
+  grid-column: span 2;
+}
